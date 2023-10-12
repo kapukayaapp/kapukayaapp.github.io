@@ -1,496 +1,251 @@
-<!doctype html>
-<html class="no-js" lang="en">
-   <head>
-      <meta charset="utf-8">
-      <!--====== Title ======-->
-      <title>Kapukaya Labs</title>
-      <meta name="description" content="">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <!--====== Favicon Icon ======-->
-      <link rel="shortcut icon" href="assets/images/KL.ico" type="image/png">
-      <!--====== Animate CSS ======-->
-      <link rel="stylesheet" href="assets/css/animate.css">
-      <!--====== Magnific Popup CSS ======-->
-      <link rel="stylesheet" href="assets/css/magnific-popup.css">
-      <!--====== Slick CSS ======-->
-      <link rel="stylesheet" href="assets/css/slick.css">
-      <!--====== Line Icons CSS ======-->
-      <link rel="stylesheet" href="assets/css/LineIcons.css">
-      <!--====== Font Awesome CSS ======-->
-      <link rel="stylesheet" href="assets/css/font-awesome.min.css">
-      <!--====== Bootstrap CSS ======-->
-      <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-      <!--====== Default CSS ======-->
-      <link rel="stylesheet" href="assets/css/default.css">
-      <!--====== Style CSS ======-->
-      <link rel="stylesheet" href="assets/css/style.css">
-   </head>
-   <body>
-      <!--[if IE]>
-      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-      <![endif]-->
-      <!--====== PRELOADER PART START ======-->
-      <div class="preloader">
-         <div class="loader">
-            <div class="ytp-spinner">
-               <div class="ytp-spinner-container">
-                  <div class="ytp-spinner-rotator">
-                     <div class="ytp-spinner-left">
-                        <div class="ytp-spinner-circle"></div>
-                     </div>
-                     <div class="ytp-spinner-right">
-                        <div class="ytp-spinner-circle"></div>
-                     </div>
-                  </div>
-               </div>
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- ===============================================-->
+    <!--    Document Title-->
+    <!-- ===============================================-->
+    <title>Kapukaya Labs</title>
+    <!-- ===============================================-->
+    <!--    Favicons-->
+    <!-- ===============================================-->
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+    <meta name="theme-color" content="#ffffff">
+    <!-- ===============================================-->
+    <!--    Stylesheets-->
+    <!-- ===============================================-->
+    <link href="assets/css/theme.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- ===============================================-->
+    <!--    Main Content-->
+    <!-- ===============================================-->
+    <main class="main" id="top">
+      <nav class="navbar navbar-expand-lg navbar-light sticky-top" data-navbar-on-scroll="data-navbar-on-scroll">
+        <div class="container">
+          <a class="navbar-brand" href="index.html">
+            <img src="assets/img/logo.png" height="40" alt="logo" />
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse border-top border-lg-0 mt-4 mt-lg-0" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#services">Hizmetler</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#development">İş Geliştime Süreci</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#about">Hakkımızda</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#why">Neden Biz?</a>
+              </li>
+            </ul>
+            <div class="d-flex ms-lg-4">
+              <a class="btn btn-warning ms-3" href="mailto:info@kapukaya.dev">Teklif Al!</a>
             </div>
-         </div>
+          </div>
+        </div>
+      </nav>
+      <section class="pt-7">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-md-6 text-md-start text-center py-6">
+              <h1 class="mb-4 fs-9 fw-bold">Sektöre Yeni Bir Durak Geliyor!</h1>
+              <p class="mb-6 lead text-secondary">Kapukaya Labs olarak dijitale yepyeni bir heyecan getirmek için ekip olarak çalışmalarımız tüm hızıyla devam ediyor.</p>
+              <div class="text-center text-md-start">
+                <a class="btn btn-warning me-3 btn-lg" href="#about" role="button">Hakkımızda</a>
+                <!-- <a class="btn btn-link text-warning fw-medium" href="#!" role="button" data-bs-toggle="modal" data-bs-target="#popupVideo" style="text-decoration: none;"><span class="fas fa-play me-2"></span>Tanıtım Videomuz </a> -->
+              </div>
+            </div>
+            <div class="col-md-6 text-end">
+              <img class="pt-7 pt-md-0 img-fluid" src="assets/img/hero-img.png" alt="" />
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ============================================-->
+      <!-- <section> begin ============================-->
+      <section class="pt-5 pt-md-9 mb-6" id="services">
+        <div class="bg-holder z-index--1 bottom-0 d-none d-lg-block" style="background-image:url(assets/img/shape.png);opacity:.5;"></div>
+        <!--/.bg-holder-->
+        <div class="container">
+          <h1 class="fs-9 fw-bold mb-4 text-center">Hizmetlerimiz</h1>
+          <div class="row">
+            <div class="col-lg-3 col-sm-6 mb-2">
+              <img class="mb-3 ms-n3" src="assets/img/software.png" width="50" alt="Feature" />
+              <h4 class="mb-3">Yazılım Çözümleri</h4>
+              <p class="mb-0 fw-medium text-secondary">Dijital dönüşümünüzü en üst seviyeye taşımak için özel olarak tasarlanmış yazılım çözümlerimizle, iş süreçlerinizi daha verimli ve etkili bir şekilde yönetin.</p>
+            </div>
+            <div class="col-lg-3 col-sm-6 mb-2">
+              <img class="mb-3 ms-n3" src="assets/img/desing.png" width="50" alt="Feature" />
+              <h4 class="mb-3">Tasarım Çözümleri</h4>
+              <p class="mb-0 fw-medium text-secondary">Markanızın ruhunu yansıtan özgün tasarımlarımızla, sadece gözleri değil, kalpleri de etkiliyoruz.</p>
+            </div>
+            <div class="col-lg-3 col-sm-6 mb-2">
+              <img class="mb-3 ms-n3" src="assets/img/company.png" width="50" alt="Feature" />
+              <h4 class="mb-3">Kurumsal Çözümler</h4>
+              <p class="mb-0 fw-medium text-secondary">Sosyal medyanın gücünü en iyi şekilde kullanarak, markanızı insanlara ulaştırıyoruz.</p>
+            </div>
+            <div class="col-lg-3 col-sm-6 mb-2">
+              <img class="mb-3 ms-n3" src="assets/img/social-media.png" width="50" alt="Feature" />
+              <h4 class="mb-3">Sosyal Medya Çözümleri</h4>
+              <p class="mb-0 fw-medium text-secondary">Kurumsal vizyonunuzu hayata geçirmek için özelleştirilmiş çözümlerimizle, başarıya giden yolda sizinle birlikte ilerliyoruz.</p>
+            </div>
+          </div>
+          <div class="text-center">
+            <a class="btn btn-warning" href="mailto:info@kapukaya.dev" role="button">Teklif Al!</a>
+          </div>
+        </div>
+        <!-- end of .container-->
+      </section>
+      <!-- <section> close ============================-->
+      <!-- ============================================-->
+      <!-- ============================================-->
+      <!-- <section> begin ============================-->
+      <section class="pt-5" id="development">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6">
+              <h5 class="text-secondary">Kapukaya Labs</h5>
+              <h2 class="mb-2 fs-7 fw-bold">İş Geliştime Süreci</h2>
+              <p class="mb-4 fw-medium text-secondary"> Bir hizmet siparişi aldığımız zaman ilk olarak gelen siparişin analizi yapılır ve ardından geliştirme işlemleri başlar. Geliştirmeler ve testler bittikten sonra son kontroller yapılır ve müşteriye iletilir. Müşteriden gelen revize istekleri yapılır ardından hizmet müşteriye tam anlamıyla teslim edilir ve belirli bir süre hizmet desteği verilir. </p>
+              <h4 class="fs-1 fw-bold">Analiz & Geliştime</h4>
+              <p class="mb-4 fw-medium text-secondary">Müşteri ihtiyaçlarını anlayarak proje temelini oluştururuz. Geliştirme süreci bu aşamada başlar.</p>
+              <h4 class="fs-1 fw-bold">Revize & Kontrol</h4>
+              <p class="mb-4 fw-medium text-secondary">Prototipleri detaylıca gözden geçiririz. Müşteri geri bildirimleriyle iyileştirmeler yapılır ve kalite kontrol sağlanır.</p>
+              <h4 class="fs-1 fw-bold">Teslim & Destek</h4>
+              <p class="mb-4 fw-medium text-secondary">Tamamlanan yazılımı müşteriye teslim ederiz. Eğitim, belgelendirme ve belirli dönemli teknik destek sağlarız.</p>
+            </div>
+            <div class="col-lg-6">
+              <img class="img-fluid" src="assets/img/validation.png" alt="" />
+            </div>
+          </div>
+        </div>
+        <!-- end of .container-->
+      </section>
+      <!-- <section> close ============================-->
+      <!-- ============================================-->
+      <!-- ============================================-->
+      <!-- <section> begin ============================-->
+      <section class="pt-5" id="manager">
+        <div class="container" id="about">
+          <div class="row">
+            <div class="col-lg-6">
+              <img class="img-fluid" src="assets/img/manager.png" alt="" />
+            </div>
+            <div class="col-lg-6">
+              <h5 class="text-secondary">Kapukaya Labs</h5>
+              <p class="fs-7 fw-bold mb-2">Doğru Yazılımla Harika Şeyler Olabilir!</p>
+              <p class="mb-4 fw-medium text-secondary"> Kapukaya Labs müşterilerini yüksek kalitede ve geniş bir hizmet yelpazesiyle buluşturmak hedefiyle yola çıkmıştır. En ileri teknolojilerle ve profesyonel kadrosuyla ortaya koyduğu hizmetler sektördeki en iyiler arasında girmeği amaçlamıştır. Mevcut olan hizmetlerimize göz atın ve detaylı bilgi almak için bizimle iletişime geçin. </p>
+              <div class="d-flex align-items-center mb-3">
+                <img class="me-sm-4 me-2" src="assets/img/tick.png" width="35" alt="tick" />
+                <p class="fw-medium mb-0 text-secondary">Müşterilerimize hızlı ve güvenilir çözümler sunarak zamanı en etkin şekilde değerlendiriyoruz. Projelerimizi belirlenen süreçlerle tamamlayarak müşterilerimizin işlerini hızlandırıyoruz.</p>
+              </div>
+              <div class="d-flex align-items-center mb-3">
+                <img class="me-sm-4 me-2" src="assets/img/tick.png" width="35" alt="tick" />
+                <p class="fw-medium mb-0 text-secondary">Projelerimizde yüksek kalite standartlarına uymak, aynı zamanda ekonomik çözümler sunmak önceliğimizdir. Bu sayede müşterilerimiz en iyi değeri alırken kaliteden ödün vermemiş olur.</p>
+              </div>
+              <div class="d-flex align-items-center mb-3">
+                <img class="me-sm-4 me-2" src="assets/img/tick.png" width="35" alt="tick" />
+                <p class="fw-medium mb-0 text-secondary">Yenilikçi yaklaşımlarımızla projelerimizi şekillendiriyoruz. Profesyonel ekibimiz, en son teknolojileri kullanarak müşterilerimize modern ve etkili çözümler sunuyor.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- end of .container-->
+      </section>
+      <!-- <section> close ============================-->
+      <!-- ============================================-->
+      <!-- ============================================-->
+      <!-- <section> begin ============================-->
+      <section class="pt-5" id="marketer">
+        <div class="container" id="why">
+          <div class="row">
+            <div class="col-lg-6">
+              <h5 class="text-secondary">Neden Biz?</h5>
+              <p class="mb-2 fs-8 fw-bold">Kapukaya Labs</p>
+              <p class="mb-4 fw-medium text-secondary">İşinizi bizimle yapmanızın birkaç önemli nedeni var. Tecrübemizle sorunları hızla çözer, bütçenizi en etkili şekilde kullanmanızı sağlarız. Müşteri memnuniyeti bizim için temeldir. Güçlü destek ekibimiz her an yanınızda olacak. Siz de farkı yaşamak istiyorsanız, doğru adrestesiniz!</p>
+              <h4 class="fw-bold fs-1">İnovatif Projeler</h4>
+              <p class="mb-4 fw-medium text-secondary">Teknolojik gelişmeleri yakından takip ederek, projelerimizi yenilikçi yaklaşımlarla şekillendiriyor ve geleceğe uyumlu çözümler sunuyoruz.</p>
+              <h4 class="fw-bold fs-1">Çözüm Odaklı Yaklaşım</h4>
+              <p class="mb-4 fw-medium text-secondary">Her müşterimizin benzersiz ihtiyaçlarına odaklanarak, en uygun çözümleri tasarlıyor ve uyguluyoruz.</p>
+              <h4 class="fw-bold fs-1">Güçlü İletişim ve Destek</h4>
+              <p class="mb-4 fw-medium text-secondary">Güçlü iletişim becerilerimizle, projelerimizin her aşamasında müşterilerimizle yakın temas halinde oluyor ve ihtiyaç duydukları desteği sağlıyoruz.</p>
+            </div>
+            <div class="col-lg-6">
+              <img class="img-fluid" src="assets/img/marketer.png" alt="" />
+            </div>
+          </div>
+        </div>
+        <!-- end of .container-->
+      </section>
+      <!-- <section> close ============================-->
+      <!-- ============================================-->
+      <!-- ============================================-->
+      <!-- <section> begin ============================-->
+      <section class="py-md-11 py-8">
+        <div class="bg-holder z-index--1 bottom-0 d-none d-lg-block background-position-top" style="background-image:url(assets/img/oval.png);opacity:.5; background-position: top !important ;"></div>
+        <!--/.bg-holder-->
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-6 text-center">
+              <h1 class="fw-bold mb-4 fs-7">İş Akışı Çözümlerimizle Verimliliğinizi En Üst Düzeye Çıkarmaya Hazırlanın!</h1>
+              <p class="mb-5 text-info fw-medium">Yazılım çözümlerimiz, iş süreçlerinizi optimize ederek verimliliğinizi artırmanızı sağlar. İş akışınızı en üst düzeye çıkararak daha hızlı, daha etkili ve daha karlı bir şekilde çalışabilirsiniz. Siz de modern teknolojilerle buluşun, işinizi bir üst seviyeye taşıyın! Hemen bize ulaşın ve çözümünüzü şimdi bulun!</p>
+              <a href="mailto:info@kapukaya.dev">
+                <button class="btn btn-warning btn-md">Teklif Al!</button>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- end of .container-->
+      </section>
+      <!-- <section> close ============================-->
+      <!-- ============================================-->
+      <!-- ============================================-->
+      <!-- <section> begin ============================-->
+      <section class="text-center py-0">
+        <div class="container">
+          <div class="container border-top py-3">
+            <div class="row justify-content-between">
+              <div class="col-12 col-md-auto mb-1 mb-md-0">
+                <p class="mb-0">&copy; 2023 Kapukaya Labs </p>
+              </div>
+              <div class="col-12 col-md-auto">
+                <p class="mb-0">kapukaya.app</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- end of .container-->
+      </section>
+      <!-- <section> close ============================-->
+      <!-- ============================================-->
+    </main>
+    <!-- ===============================================-->
+    <!--    End of Main Content-->
+    <!-- ===============================================-->
+    <div class="modal fade" id="popupVideo" tabindex="-1" aria-labelledby="popupVideo" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <iframe class="rounded" style="width:100%;height:500px;" src="https://www.youtube.com/embed/bvmXvi76qQ8?si=NON0jLO2aTEISI_v" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
       </div>
-      <!--====== PRELOADER PART ENDS ======-->
-      <!--====== HEADER PART START ======-->
-      <header class="header-area">
-         <div class="navbar-area">
-            <div class="container">
-               <div class="row">
-                  <div class="col-lg-12">
-                     <nav class="navbar navbar-expand-lg">
-                        <a class="navbar-brand" href="index.html">
-                        <img src="assets/images/KL.ico" alt="Logo">
-                        </a>
-                        <button class="navbar-toggler" type="button" data-toggle="collapse"
-                           data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                           aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="toggler-icon"></span>
-                        <span class="toggler-icon"></span>
-                        <span class="toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
-                           <ul id="nav" class="navbar-nav ml-auto">
-                              <li class="nav-item active">
-                                 <a class="page-scroll" href="#home">Anasayfa</a>
-                              </li>
-                              <!-- <li class="nav-item">
-                                 <a class="page-scroll" href="#features">Hizmetler</a>
-                                 </li> -->
-                              <li class="nav-item">
-                                 <a class="page-scroll" href="#about">Hakkımızda</a>
-                              </li>
-                              <li class="nav-item">
-                                 <a class="page-scroll" href="#facts">Hizmetler</a>
-                              </li>
-                              <li class="nav-item">
-                                 <a class="page-scroll" href="#team">Ekip</a>
-                              </li>
-                           </ul>
-                        </div>
-                        <!-- navbar collapse -->
-                        <div class="navbar-btn d-none d-sm-inline-block">
-                           <a class="main-btn" data-scroll-nav="0" href="mailto:teklif@kapukaya.dev">Teklif
-                           Al!</a>
-                        </div>
-                     </nav>
-                     <!-- navbar -->
-                  </div>
-               </div>
-               <!-- row -->
-            </div>
-            <!-- container -->
-         </div>
-         <!-- navbar area -->
-         <div id="home" class="header-hero bg_cover" style="background-image: url(assets/images/banner-bg.svg)">
-            <div class="container">
-               <div class="row justify-content-center">
-                  <div class="col-lg-8">
-                     <div class="header-hero-content text-center">
-                        <h3 class="header-sub-title wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.2s">
-                           Kapukaya Labs
-                        </h3>
-                        <h2 class="header-title wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.5s">
-                           Dijitaldeki Yansımanız
-                        </h2>
-                     </div>
-                     <!-- header hero content -->
-                  </div>
-               </div>
-               <!-- row -->
-               <div class="row">
-                  <div class="col-lg-12">
-                     <div class="header-hero-image text-center wow fadeIn" data-wow-duration="1.3s"
-                        data-wow-delay="1.4s">
-                        <img src="assets/images/header-hero.png" alt="hero">
-                     </div>
-                     <!-- header hero image -->
-                  </div>
-               </div>
-               <!-- row -->
-            </div>
-            <!-- container -->
-            <div id="particles-1" class="particles"></div>
-         </div>
-         <!-- header hero -->
-      </header>
-      <!--====== HEADER PART ENDS ======-->
-      <!--====== BRAMD PART START ======-->
-      <div class="brand-area pt-90">
-         <div class="container">
-            <div class="row">
-               <div class="col-lg-12">
-                  <div class="brand-logo d-flex align-items-center justify-content-center justify-content-md-between">
-                     <div class="single-logo mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
-                        <img src="assets/images/csharp.png" alt="brand">
-                     </div>
-                     <!-- single logo -->
-                     <div class="single-logo mt-30 wow fadeIn" data-wow-duration="1.5s" data-wow-delay="0.2s">
-                        <img src="assets/images/dotnet.jpeg" alt="brand">
-                     </div>
-                     <!-- single logo -->
-                     <div class="single-logo mt-30 wow fadeIn" data-wow-duration="1.5s" data-wow-delay="0.3s">
-                        <img src="assets/images/mssql.png" alt="brand">
-                     </div>
-                     <!-- single logo -->
-                     <div class="single-logo mt-30 wow fadeIn" data-wow-duration="1.5s" data-wow-delay="0.4s">
-                        <img src="assets/images/html.png" alt="brand">
-                     </div>
-                     <!-- single logo -->
-                     <div class="single-logo mt-30 wow fadeIn" data-wow-duration="1.5s" data-wow-delay="0.5s">
-                        <img src="assets/images/css.png" alt="brand">
-                     </div>
-                     <!-- single logo -->
-                     <div class="single-logo mt-30 wow fadeIn" data-wow-duration="1.5s" data-wow-delay="0.5s">
-                        <img src="assets/images/bootstrap.png" alt="brand">
-                     </div>
-                     <!-- single logo -->
-                     <div class="single-logo mt-30 wow fadeIn" data-wow-duration="1.5s" data-wow-delay="0.5s">
-                        <img src="assets/images/javascript.png" alt="brand">
-                     </div>
-                     <!-- single logo -->
-                  </div>
-                  <!-- brand logo -->
-               </div>
-            </div>
-            <!-- row -->
-         </div>
-         <!-- container -->
-      </div>
-      <!--====== BRAMD PART ENDS ======-->
-      <!--====== SERVICES PART START ======-->
-      <section id="features" class="services-area pt-120">
-         <div class="container">
-            <div class="row justify-content-center">
-               <div class="col-lg-10">
-                  <div class="section-title text-center pb-40">
-                     <div class="line m-auto"></div>
-                     <h3 class="title">Kapukaya Labs <span> olarak dijitale yepyeni bir heyecan getirmek için ekip
-                        olarak çalışmalarımız tüm hızıyla devam ediyor.</span>
-                     </h3>
-                  </div>
-                  <!-- section title -->
-               </div>
-            </div>
-            <!-- row -->
-            <div class="row justify-content-center">
-               <div class="col-lg-4 col-md-7 col-sm-8">
-                  <div class="single-services text-center mt-30 wow fadeIn" data-wow-duration="1s"
-                     data-wow-delay="0.2s">
-                     <div class="services-icon">
-                        <img class="shape" src="assets/images/services-shape.svg" alt="shape">
-                        <img class="shape-1" src="assets/images/services-shape-1.svg" alt="shape">
-                        <i class="lni-bolt"></i>
-                     </div>
-                     <div class="services-content mt-30">
-                        <h4 class="services-title"><a href="#">Hızlı & Güvenilir</a></h4>
-                     </div>
-                  </div>
-                  <!-- single services -->
-               </div>
-               <div class="col-lg-4 col-md-7 col-sm-8">
-                  <div class="single-services text-center mt-30 wow fadeIn" data-wow-duration="1s"
-                     data-wow-delay="0.5s">
-                     <div class="services-icon">
-                        <img class="shape" src="assets/images/services-shape.svg" alt="shape">
-                        <img class="shape-1" src="assets/images/services-shape-2.svg" alt="shape">
-                        <i class="lni-thumbs-up"></i>
-                     </div>
-                     <div class="services-content mt-30">
-                        <h4 class="services-title"><a href="#">Kaliteli & Ekonomik</a></h4>
-                     </div>
-                  </div>
-                  <!-- single services -->
-               </div>
-               <div class="col-lg-4 col-md-7 col-sm-8">
-                  <div class="single-services text-center mt-30 wow fadeIn" data-wow-duration="1s"
-                     data-wow-delay="0.8s">
-                     <div class="services-icon">
-                        <img class="shape" src="assets/images/services-shape.svg" alt="shape">
-                        <img class="shape-1" src="assets/images/services-shape-3.svg" alt="shape">
-                        <i class="lni-star-half"></i>
-                     </div>
-                     <div class="services-content mt-30">
-                        <h4 class="services-title"><a href="#">Yenilikçi & Profesyonel</a></h4>
-                     </div>
-                  </div>
-                  <!-- single services -->
-               </div>
-            </div>
-            <!-- row -->
-         </div>
-         <!-- container -->
-      </section>
-      <!--====== SERVICES PART ENDS ======-->
-      <!--====== ABOUT PART START ======-->
-      <section id="about" class="about-area pt-70">
-         <div class="container">
-            <div class="row">
-               <div class="col-lg-6">
-                  <div class="about-content mt-50 wow fadeInLeftBig" data-wow-duration="1s" data-wow-delay="0.5s">
-                     <div class="section-title">
-                        <div class="line"></div>
-                        <h3 class="title">Doğru Yazılımla Harika Şeyler Olabilir!</h3>
-                     </div>
-                     <!-- section title -->
-                     <p class="text">Kapukaya Labs müşterilerini yüksek kalitede ve geniş bir hizmet yelpazesiyle
-                        buluşturmak hedefiyle yola çıkmıştır. En ileri teknolojilerle ve profesyonel kadrosuyla
-                        ortaya koyduğu hizmetler sektördeki en iyiler arasında girmeği amaçlamıştır. Mevcut olan
-                        hizmetlerimize göz atın ve detaylı bilgi almak için bizimle iletişime geçin.
-                     </p>
-                  </div>
-                  <!-- about content -->
-               </div>
-               <div class="col-lg-6">
-                  <div class="about-image text-center mt-50 wow fadeInRightBig" data-wow-duration="1s"
-                     data-wow-delay="0.5s">
-                     <img src="assets/images/about1.svg" alt="about">
-                  </div>
-                  <!-- about image -->
-               </div>
-            </div>
-            <!-- row -->
-         </div>
-         <!-- container -->
-         <div class="about-shape-1">
-            <img src="assets/images/about-shape-1.svg" alt="shape">
-         </div>
-      </section>
-      <!--====== ABOUT PART ENDS ======-->
-      <!--====== ABOUT PART START ======-->
-      <section class="about-area pt-70">
-         <div class="about-shape-2">
-            <img src="assets/images/about-shape-2.svg" alt="shape">
-         </div>
-         <div class="container">
-            <div class="row">
-               <div class="col-lg-6 order-lg-last">
-                  <div class="about-content mt-50 wow fadeInLeftBig" data-wow-duration="1s" data-wow-delay="0.5s">
-                     <div class="section-title">
-                        <div class="line"></div>
-                        <h3 class="title">Kapukaya Labs</h3>
-                     </div>
-                     <!-- section title -->
-                     <p class="text">Kapukaya Labs sadece ihtiyacınız olan şeyi değil, aynı zamanda en iyi kaliteyi
-                        en
-                        uygun fiyatlarla size sunuyoruz. Sektörde edindiğimiz deneyim sayesinde, müşterilerimizi
-                        asla hayal kırıklığına uğratmayacak eksiksiz ve etkili bir hizmet veriyoruz. İster tek
-                        seferlik alıcı olun, ister sürekli iş yapmak isteyin, her aşamada mükemmel hizmetler sizleri
-                        bekliyor. Aşağıdan hizmetlerimizi inceleyin ve aradığınızı bulamazsanız bizimle iletişime
-                        geçin.
-                     </p>
-                  </div>
-                  <!-- about content -->
-               </div>
-               <div class="col-lg-6 order-lg-first">
-                  <div class="about-image text-center mt-50 wow fadeInRightBig" data-wow-duration="1s"
-                     data-wow-delay="0.5s">
-                     <img src="assets/images/about2.svg" alt="about">
-                  </div>
-                  <!-- about image -->
-               </div>
-            </div>
-            <!-- row -->
-         </div>
-         <!-- container -->
-      </section>
-      <!--====== ABOUT PART START ======-->
-      <section class="about-area pt-70">
-         <div class="container">
-            <div class="row">
-               <div class="col-lg-6">
-                  <div class="about-content mt-50 wow fadeInLeftBig" data-wow-duration="1s" data-wow-delay="0.5s">
-                     <div class="section-title">
-                        <div class="line"></div>
-                        <h3 class="title">İş Geliştirme Süreci</h3>
-                     </div>
-                     <!-- section title -->
-                     <p class="text">Kapukaya Labs olarak bir hizmet siparişi aldığımız zaman ilk olarak gelen
-                        siparişin analizi yapılır ve ardından geliştirme işlemleri başlar. Geliştirmeler ve testler
-                        bittikten sonra son kontroller yapılır ve müşteriye iletilir. Müşteriden gelen revize
-                        istekleri yapılır ardından hizmet müşteriye tam anlamıyla teslim edilir ve belirli bir süre
-                        hizmet desteği verilir.
-                     </p>
-                  </div>
-                  <!-- about content -->
-               </div>
-               <div class="col-lg-6">
-                  <div class="about-image text-center mt-50 wow fadeInRightBig" data-wow-duration="1s"
-                     data-wow-delay="0.5s">
-                     <img src="assets/images/about3.svg" alt="about">
-                  </div>
-                  <!-- about image -->
-               </div>
-            </div>
-            <!-- row -->
-         </div>
-         <!-- container -->
-         <div class="about-shape-1">
-            <img src="assets/images/about-shape-1.svg" alt="shape">
-         </div>
-      </section>
-      <!--====== ABOUT PART ENDS ======-->
-      <!--====== ABOUT PART ENDS ======-->
-      <!--====== VIDEO COUNTER PART START ======-->
-      <section id="facts" class="video-counter pt-70">
-         <div class="container">
-            <div class="row">
-               <div class="col-lg-6">
-                  <div class="video-content mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
-                     <img class="dots" src="assets/images/dots.svg" alt="dots">
-                     <div class="video-wrapper">
-                        <div class="video-image">
-                           <img src="assets/images/statistics.jpg" alt="video">
-                        </div>
-                        <!-- <div class="video-icon">
-                           <a href="#" class="video-popup"><i
-                                   class="lni-play"></i></a>
-                           </div> -->
-                     </div>
-                     <!-- video wrapper -->
-                  </div>
-                  <!-- video content -->
-               </div>
-               <div class="col-lg-6">
-                  <div class="counter-wrapper mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
-                     <div class="counter-content">
-                        <div class="section-title">
-                           <div class="line"></div>
-                           <h3 class="title">Hizmetler</h3>
-                        </div>
-                        <!-- section title -->
-                        <p class="text" style="text-align: center;">İş akışı çözümlerimizle verimliliğinizi en üst düzeye çıkarmaya hazırlanın!</p>
-                        <p style="text-align: center; font-weight: bold;">Yazılım Çözümleri <br> Tasarım Çözümleri <br> Sosyal Medya Çözümleri <br> Kurumsal Çözümler</p>
-                        <p class="text" style="text-align: center;"><a href="mailto:teklif@kapukaya.dev">Hemen Teklif Al!</a></p>
-                     </div>
-                     <!-- counter content -->
-                     <div class="row no-gutters">
-                        <div class="col-4">
-                           <div
-                              class="single-counter counter-color-1 d-flex align-items-center justify-content-center">
-                              <div class="counter-items text-center">
-                                 <span class="count"><span class="counter">12</span>
-                                 <p class="text">Proje</p>
-                              </div>
-                           </div>
-                           <!-- single counter -->
-                        </div>
-                        <div class="col-4">
-                           <div
-                              class="single-counter counter-color-2 d-flex align-items-center justify-content-center">
-                              <div class="counter-items text-center">
-                                 <span class="count"><span class="counter">5</span>
-                                 <p class="text">Müşteri</p>
-                              </div>
-                           </div>
-                           <!-- single counter -->
-                        </div>
-                        <div class="col-4">
-                           <div
-                              class="single-counter counter-color-3 d-flex align-items-center justify-content-center">
-                              <div class="counter-items text-center">
-                                 <span class="count"><span class="counter">4.5</span></span>
-                                 <p class="text">Değerlendirme</p>
-                              </div>
-                           </div>
-                           <!-- single counter -->
-                        </div>
-                     </div>
-                     <!-- row -->
-                  </div>
-                  <!-- counter wrapper -->
-               </div>
-            </div>
-            <!-- row -->
-         </div>
-         <!-- container -->
-      </section>
-      <!--====== VIDEO COUNTER PART ENDS ======-->
-      <!--====== TEAM PART START ======-->
-      <section id="team" class="team-area pt-120">
-         <div class="container">
-            <div class="row justify-content-center">
-               <div class="col-lg-5">
-                  <div class="section-title text-center pb-30">
-                     <div class="line m-auto"></div>
-                     <h3 class="title"><span>Ekip</h3>
-                  </div>
-                  <!-- section title -->
-               </div>
-            </div>
-            <!-- row -->
-            <div class="row justify-content-center">
-               <div class="col-lg-4 col-md-7 col-sm-8">
-                  <div class="single-team text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
-                     <div class="team-image">
-                        <img src="assets/images/team-1.png" alt="Team">
-                        <div class="social">
-                           <ul>
-                              <li><a href="https://x.com/furkankapukayaa" target="_blank"><i class="lni-twitter-filled"></i></a></li>
-                              <li><a href="https://www.instagram.com/furkankapukayaa/" target="_blank"><i class="lni-instagram-filled"></i></a></li>
-                              <li><a href="https://www.youtube.com/@furkankapukaya" target="_blank"><i class="lni-youtube"></i></a></li>
-                              <li><a href="https://www.linkedin.com/in/furkankapukayaa/" target="_blank"><i class="lni-linkedin-original"></i></a></li>
-                              <li><a href="https://github.com/furkankapukayaa" target="_blank"><i class="lni-github-original"></i></a></li>
-                           </ul>
-                        </div>
-                     </div>
-                     <div class="team-content">
-                        <h5 class="holder-name"><a href="#">Furkan Kapukaya</a></h5>
-                        <p class="text">Software Developer</p>
-                     </div>
-                  </div>
-                  <!-- single team -->
-               </div>
-            </div>
-         </div>
-         <!-- row -->
-         </div> <!-- container -->
-      </section>
-      <!--====== TEAM PART ENDS ======-->
-      <p style="margin: 25px; text-align: center;"> Kapukaya Labs</p>
-      <!--====== BACK TOP TOP PART START ======-->
-      <a href="#" class="back-to-top"><i class="lni-chevron-up"></i></a>
-      <!--====== BACK TOP TOP PART ENDS ======-->
-      <!--====== Jquery js ======-->
-      <script src="assets/js/vendor/jquery-1.12.4.min.js"></script>
-      <script src="assets/js/vendor/modernizr-3.7.1.min.js"></script>
-      <!--====== Bootstrap js ======-->
-      <script src="assets/js/popper.min.js"></script>
-      <script src="assets/js/bootstrap.min.js"></script>
-      <!--====== Plugins js ======-->
-      <script src="assets/js/plugins.js"></script>
-      <!--====== Slick js ======-->
-      <script src="assets/js/slick.min.js"></script>
-      <!--====== Ajax Contact js ======-->
-      <script src="assets/js/ajax-contact.js"></script>
-      <!--====== Counter Up js ======-->
-      <script src="assets/js/waypoints.min.js"></script>
-      <script src="assets/js/jquery.counterup.min.js"></script>
-      <!--====== Magnific Popup js ======-->
-      <script src="assets/js/jquery.magnific-popup.min.js"></script>
-      <!--====== Scrolling Nav js ======-->
-      <script src="assets/js/jquery.easing.min.js"></script>
-      <script src="assets/js/scrolling-nav.js"></script>
-      <!--====== wow js ======-->
-      <script src="assets/js/wow.min.js"></script>
-      <!--====== Particles js ======-->
-      <script src="assets/js/particles.min.js"></script>
-      <!--====== Main js ======-->
-      <script src="assets/js/main.js"></script>
-   </body>
+    </div>
+    <!-- ===============================================-->
+    <!--    JavaScripts-->
+    <!-- ===============================================-->
+    <script src="vendors/@popperjs/popper.min.js"></script>
+    <script src="vendors/bootstrap/bootstrap.min.js"></script>
+    <script src="vendors/is/is.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
+    <script src="vendors/fontawesome/all.min.js"></script>
+    <script src="assets/js/theme.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;family=Volkhov:wght@700&amp;display=swap" rel="stylesheet">
+  </body>
 </html>

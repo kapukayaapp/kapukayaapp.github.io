@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ürün Ekleme ve Excel Aktarma</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <title>Product List to Excel</title>
     <style>
         * {
             box-sizing: border-box;
@@ -89,7 +90,8 @@
         }
 
         .table-container {
-            margin-top: 30px;
+            margin-top: 50px;
+            width: 100%;
             overflow-x: auto;
         }
 
@@ -114,6 +116,13 @@
             font-size: 13px;
         }
 
+        .copyright {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #777;
+            text-align: center;
+        }
+
         @media (max-width: 600px) {
             .form-group {
                 flex: 1 1 100%;
@@ -128,7 +137,7 @@
 <body>
 
 <div class="container">
-    <h1>Ürün Ekleme Formu</h1>
+    <h1>Product List to Excel</h1>
     <form id="productForm">
         <div class="form-grid">
             <div class="form-group">
@@ -197,19 +206,20 @@
             </div>
         </div>
         <div class="button-container">
-            <button type="button" onclick="addProduct()">Ekle</button>
-            <button type="button" onclick="exportToExcel()">Excel’e Aktar</button>
+            <button type="button" onclick="addProduct()">Add to List</button>
+            <button type="button" onclick="exportToExcel()">Export to Excel</button>
         </div>
     </form>
 
     <div class="table-container">
-        <h2>Ürün Listesi</h2>
+        <h2>Added Product List</h2>
+        <br/>
         <table id="productTable">
             <thead>
                 <tr>
                     <th>No</th>
                     <th>Shop</th>
-                    <th>Photo (File Name)</th>
+                    <th>Photo</th>
                     <th>Item No</th>
                     <th>CTNS</th>
                     <th>QTY/CTN</th>
@@ -223,6 +233,7 @@
                     <th>Total CBM</th>
                     <th>KG/CTN</th>
                     <th>G.W.(KGS)</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -230,20 +241,22 @@
             </tbody>
         </table>
     </div>
+
+    <div class="copyright">© 2024 KapukayaLabs</div>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 <script>
     let products = [];
 
-    async function addProduct() {
+    function addProduct() {
         const photoFile = document.getElementById("photo").files[0];
-        const photoName = photoFile ? photoFile.name : "";  // Fotoğraf dosya ismini kaydet
+        const photoName = photoFile ? photoFile.name : "";
 
         const product = {
             no: document.getElementById("no").value,
             shop: document.getElementById("shop").value,
-            photoName: photoName,  // Photo alanına sadece dosya ismini yazıyoruz
+            photoName: photoName,
             itemNo: document.getElementById("itemNo").value,
             ctns: document.getElementById("ctns").value,
             qtyCtn: document.getElementById("qtyCtn").value,
@@ -268,13 +281,31 @@
         const tableBody = document.getElementById("productTable").getElementsByTagName("tbody")[0];
         tableBody.innerHTML = "";
 
-        products.forEach(product => {
+        products.forEach((product, index) => {
             const row = tableBody.insertRow();
             Object.values(product).forEach(value => {
                 const cell = row.insertCell();
                 cell.textContent = value;
             });
+
+            // Aksiyon hücresi için "Sil" düğmesi ekleyelim
+            const actionCell = row.insertCell();
+            const deleteButton = document.createElement("button");
+            deleteButton.textContent = "Delete";
+            deleteButton.onclick = () => removeProduct(index);
+            deleteButton.style.backgroundColor = "#f44336";
+            deleteButton.style.color = "white";
+            deleteButton.style.border = "none";
+            deleteButton.style.padding = "5px 10px";
+            deleteButton.style.cursor = "pointer";
+            deleteButton.style.borderRadius = "4px";
+            actionCell.appendChild(deleteButton);
         });
+    }
+
+    function removeProduct(index) {
+        products.splice(index, 1);
+        displayProducts();
     }
 
     function exportToExcel() {

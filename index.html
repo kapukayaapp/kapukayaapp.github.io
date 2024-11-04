@@ -1,251 +1,413 @@
 <!DOCTYPE html>
-<html lang="en-US" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- ===============================================-->
-    <!--    Document Title-->
-    <!-- ===============================================-->
-    <title>Kapukaya Labs</title>
-    <!-- ===============================================-->
-    <!--    Favicons-->
-    <!-- ===============================================-->
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
-    <meta name="theme-color" content="#ffffff">
-    <!-- ===============================================-->
-    <!--    Stylesheets-->
-    <!-- ===============================================-->
-    <link href="assets/css/theme.css" rel="stylesheet" />
-  </head>
-  <body>
-    <!-- ===============================================-->
-    <!--    Main Content-->
-    <!-- ===============================================-->
-    <main class="main" id="top">
-      <nav class="navbar navbar-expand-lg navbar-light sticky-top" data-navbar-on-scroll="data-navbar-on-scroll">
-        <div class="container">
-          <a class="navbar-brand" href="index.html">
-            <img src="assets/img/logo.png" height="40" alt="logo" />
-          </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse border-top border-lg-0 mt-4 mt-lg-0" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto">
-              <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="#services">Hizmetler</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="#development">İş Geliştime Süreci</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="#about">Hakkımızda</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="#why">Neden Biz?</a>
-              </li>
-            </ul>
-            <div class="d-flex ms-lg-4">
-              <a class="btn btn-warning ms-3" href="mailto:info@kapukaya.dev">Teklif Al!</a>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ürün Ekleme ve Excel Aktarma</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 20px;
+            background-color: #f7f7f7;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 800px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .form-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .form-group {
+            flex: 1 1 calc(50% - 10px);
+        }
+
+        label {
+            display: block;
+            font-size: 14px;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="file"] {
+            width: 100%;
+            padding: 8px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        button {
+            flex: 1;
+            padding: 10px;
+            font-size: 16px;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 0 5px;
+        }
+
+        button:first-child {
+            background-color: #4CAF50;
+        }
+
+        button:last-child {
+            background-color: #007BFF;
+        }
+
+        .table-container {
+            margin-top: 30px;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            font-size: 14px;
+        }
+
+        td {
+            font-size: 13px;
+        }
+
+        @media (max-width: 600px) {
+            .form-group {
+                flex: 1 1 100%;
+            }
+
+            button {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Ürün Ekleme Formu</h1>
+    <form id="productForm">
+        <div class="form-grid">
+            <div class="form-group">
+                <label>No:</label>
+                <input type="text" id="no" required>
             </div>
-          </div>
+            <div class="form-group">
+                <label>Shop:</label>
+                <input type="text" id="shop" required>
+            </div>
+            <div class="form-group">
+                <label>Photo:</label>
+                <input type="file" id="photo" accept="image/*" capture="environment" required>
+            </div>
+            <div class="form-group">
+                <label>Item No:</label>
+                <input type="text" id="itemNo" required>
+            </div>
+            <div class="form-group">
+                <label>CTNS:</label>
+                <input type="text" id="ctns" required>
+            </div>
+            <div class="form-group">
+                <label>QTY/CTN:</label>
+                <input type="text" id="qtyCtn" required>
+            </div>
+            <div class="form-group">
+                <label>TT:</label>
+                <input type="text" id="tt" required>
+            </div>
+            <div class="form-group">
+                <label>QTY:</label>
+                <input type="text" id="qty" required>
+            </div>
+            <div class="form-group">
+                <label>U/Price:</label>
+                <input type="text" id="uPrice" required>
+            </div>
+            <div class="form-group">
+                <label>Amount:</label>
+                <input type="text" id="amount" required>
+            </div>
+            <div class="form-group">
+                <label>Amount2:</label>
+                <input type="text" id="amount2">
+            </div>
+            <div class="form-group">
+                <label>Amount3:</label>
+                <input type="text" id="amount3">
+            </div>
+            <div class="form-group">
+                <label>CBM:</label>
+                <input type="text" id="cbm" required>
+            </div>
+            <div class="form-group">
+                <label>Total CBM:</label>
+                <input type="text" id="totalCbm" required>
+            </div>
+            <div class="form-group">
+                <label>KG/CTN:</label>
+                <input type="text" id="kgCtn" required>
+            </div>
+            <div class="form-group">
+                <label>G.W.(KGS):</label>
+                <input type="text" id="gwKgs" required>
+            </div>
         </div>
-      </nav>
-      <section class="pt-7">
-        <div class="container">
-          <div class="row align-items-center">
-            <div class="col-md-6 text-md-start text-center py-6">
-              <h1 class="mb-4 fs-9 fw-bold">Sektöre Yeni Bir Durak Geliyor!</h1>
-              <p class="mb-6 lead text-secondary">Kapukaya Labs olarak dijitale yepyeni bir heyecan getirmek için ekip olarak çalışmalarımız tüm hızıyla devam ediyor.</p>
-              <div class="text-center text-md-start">
-                <a class="btn btn-warning me-3 btn-lg" href="#about" role="button">Hakkımızda</a>
-                <!-- <a class="btn btn-link text-warning fw-medium" href="#!" role="button" data-bs-toggle="modal" data-bs-target="#popupVideo" style="text-decoration: none;"><span class="fas fa-play me-2"></span>Tanıtım Videomuz </a> -->
-              </div>
-            </div>
-            <div class="col-md-6 text-end">
-              <img class="pt-7 pt-md-0 img-fluid" src="assets/img/hero-img.png" alt="" />
-            </div>
-          </div>
+        <div class="button-container">
+            <button type="button" onclick="addProduct()">Ekle</button>
+            <button type="button" onclick="exportToExcel()">Excel’e Aktar</button>
         </div>
-      </section>
-      <!-- ============================================-->
-      <!-- <section> begin ============================-->
-      <section class="pt-5 pt-md-9 mb-6" id="services">
-        <div class="bg-holder z-index--1 bottom-0 d-none d-lg-block" style="background-image:url(assets/img/shape.png);opacity:.5;"></div>
-        <!--/.bg-holder-->
-        <div class="container">
-          <h1 class="fs-9 fw-bold mb-4 text-center">Hizmetlerimiz</h1>
-          <div class="row">
-            <div class="col-lg-3 col-sm-6 mb-2">
-              <img class="mb-3 ms-n3" src="assets/img/software.png" width="50" alt="Feature" />
-              <h4 class="mb-3">Yazılım Çözümleri</h4>
-              <p class="mb-0 fw-medium text-secondary">Dijital dönüşümünüzü en üst seviyeye taşımak için özel olarak tasarlanmış yazılım çözümlerimizle, iş süreçlerinizi daha verimli ve etkili bir şekilde yönetin.</p>
-            </div>
-            <div class="col-lg-3 col-sm-6 mb-2">
-              <img class="mb-3 ms-n3" src="assets/img/desing.png" width="50" alt="Feature" />
-              <h4 class="mb-3">Tasarım Çözümleri</h4>
-              <p class="mb-0 fw-medium text-secondary">Markanızın ruhunu yansıtan özgün tasarımlarımızla, sadece gözleri değil, kalpleri de etkiliyoruz.</p>
-            </div>
-            <div class="col-lg-3 col-sm-6 mb-2">
-              <img class="mb-3 ms-n3" src="assets/img/company.png" width="50" alt="Feature" />
-              <h4 class="mb-3">Kurumsal Çözümler</h4>
-              <p class="mb-0 fw-medium text-secondary">Sosyal medyanın gücünü en iyi şekilde kullanarak, markanızı insanlara ulaştırıyoruz.</p>
-            </div>
-            <div class="col-lg-3 col-sm-6 mb-2">
-              <img class="mb-3 ms-n3" src="assets/img/social-media.png" width="50" alt="Feature" />
-              <h4 class="mb-3">Sosyal Medya Çözümleri</h4>
-              <p class="mb-0 fw-medium text-secondary">Kurumsal vizyonunuzu hayata geçirmek için özelleştirilmiş çözümlerimizle, başarıya giden yolda sizinle birlikte ilerliyoruz.</p>
-            </div>
-          </div>
-          <div class="text-center">
-            <a class="btn btn-warning" href="mailto:info@kapukaya.dev" role="button">Teklif Al!</a>
-          </div>
-        </div>
-        <!-- end of .container-->
-      </section>
-      <!-- <section> close ============================-->
-      <!-- ============================================-->
-      <!-- ============================================-->
-      <!-- <section> begin ============================-->
-      <section class="pt-5" id="development">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-6">
-              <h5 class="text-secondary">Kapukaya Labs</h5>
-              <h2 class="mb-2 fs-7 fw-bold">İş Geliştime Süreci</h2>
-              <p class="mb-4 fw-medium text-secondary"> Bir hizmet siparişi aldığımız zaman ilk olarak gelen siparişin analizi yapılır ve ardından geliştirme işlemleri başlar. Geliştirmeler ve testler bittikten sonra son kontroller yapılır ve müşteriye iletilir. Müşteriden gelen revize istekleri yapılır ardından hizmet müşteriye tam anlamıyla teslim edilir ve belirli bir süre hizmet desteği verilir. </p>
-              <h4 class="fs-1 fw-bold">Analiz & Geliştime</h4>
-              <p class="mb-4 fw-medium text-secondary">Müşteri ihtiyaçlarını anlayarak proje temelini oluştururuz. Geliştirme süreci bu aşamada başlar.</p>
-              <h4 class="fs-1 fw-bold">Revize & Kontrol</h4>
-              <p class="mb-4 fw-medium text-secondary">Prototipleri detaylıca gözden geçiririz. Müşteri geri bildirimleriyle iyileştirmeler yapılır ve kalite kontrol sağlanır.</p>
-              <h4 class="fs-1 fw-bold">Teslim & Destek</h4>
-              <p class="mb-4 fw-medium text-secondary">Tamamlanan yazılımı müşteriye teslim ederiz. Eğitim, belgelendirme ve belirli dönemli teknik destek sağlarız.</p>
-            </div>
-            <div class="col-lg-6">
-              <img class="img-fluid" src="assets/img/validation.png" alt="" />
-            </div>
-          </div>
-        </div>
-        <!-- end of .container-->
-      </section>
-      <!-- <section> close ============================-->
-      <!-- ============================================-->
-      <!-- ============================================-->
-      <!-- <section> begin ============================-->
-      <section class="pt-5" id="manager">
-        <div class="container" id="about">
-          <div class="row">
-            <div class="col-lg-6">
-              <img class="img-fluid" src="assets/img/manager.png" alt="" />
-            </div>
-            <div class="col-lg-6">
-              <h5 class="text-secondary">Kapukaya Labs</h5>
-              <p class="fs-7 fw-bold mb-2">Doğru Yazılımla Harika Şeyler Olabilir!</p>
-              <p class="mb-4 fw-medium text-secondary"> Kapukaya Labs müşterilerini yüksek kalitede ve geniş bir hizmet yelpazesiyle buluşturmak hedefiyle yola çıkmıştır. En ileri teknolojilerle ve profesyonel kadrosuyla ortaya koyduğu hizmetler sektördeki en iyiler arasında girmeği amaçlamıştır. Mevcut olan hizmetlerimize göz atın ve detaylı bilgi almak için bizimle iletişime geçin. </p>
-              <div class="d-flex align-items-center mb-3">
-                <img class="me-sm-4 me-2" src="assets/img/tick.png" width="35" alt="tick" />
-                <p class="fw-medium mb-0 text-secondary">Müşterilerimize hızlı ve güvenilir çözümler sunarak zamanı en etkin şekilde değerlendiriyoruz. Projelerimizi belirlenen süreçlerle tamamlayarak müşterilerimizin işlerini hızlandırıyoruz.</p>
-              </div>
-              <div class="d-flex align-items-center mb-3">
-                <img class="me-sm-4 me-2" src="assets/img/tick.png" width="35" alt="tick" />
-                <p class="fw-medium mb-0 text-secondary">Projelerimizde yüksek kalite standartlarına uymak, aynı zamanda ekonomik çözümler sunmak önceliğimizdir. Bu sayede müşterilerimiz en iyi değeri alırken kaliteden ödün vermemiş olur.</p>
-              </div>
-              <div class="d-flex align-items-center mb-3">
-                <img class="me-sm-4 me-2" src="assets/img/tick.png" width="35" alt="tick" />
-                <p class="fw-medium mb-0 text-secondary">Yenilikçi yaklaşımlarımızla projelerimizi şekillendiriyoruz. Profesyonel ekibimiz, en son teknolojileri kullanarak müşterilerimize modern ve etkili çözümler sunuyor.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- end of .container-->
-      </section>
-      <!-- <section> close ============================-->
-      <!-- ============================================-->
-      <!-- ============================================-->
-      <!-- <section> begin ============================-->
-      <section class="pt-5" id="marketer">
-        <div class="container" id="why">
-          <div class="row">
-            <div class="col-lg-6">
-              <h5 class="text-secondary">Neden Biz?</h5>
-              <p class="mb-2 fs-8 fw-bold">Kapukaya Labs</p>
-              <p class="mb-4 fw-medium text-secondary">İşinizi bizimle yapmanızın birkaç önemli nedeni var. Tecrübemizle sorunları hızla çözer, bütçenizi en etkili şekilde kullanmanızı sağlarız. Müşteri memnuniyeti bizim için temeldir. Güçlü destek ekibimiz her an yanınızda olacak. Siz de farkı yaşamak istiyorsanız, doğru adrestesiniz!</p>
-              <h4 class="fw-bold fs-1">İnovatif Projeler</h4>
-              <p class="mb-4 fw-medium text-secondary">Teknolojik gelişmeleri yakından takip ederek, projelerimizi yenilikçi yaklaşımlarla şekillendiriyor ve geleceğe uyumlu çözümler sunuyoruz.</p>
-              <h4 class="fw-bold fs-1">Çözüm Odaklı Yaklaşım</h4>
-              <p class="mb-4 fw-medium text-secondary">Her müşterimizin benzersiz ihtiyaçlarına odaklanarak, en uygun çözümleri tasarlıyor ve uyguluyoruz.</p>
-              <h4 class="fw-bold fs-1">Güçlü İletişim ve Destek</h4>
-              <p class="mb-4 fw-medium text-secondary">Güçlü iletişim becerilerimizle, projelerimizin her aşamasında müşterilerimizle yakın temas halinde oluyor ve ihtiyaç duydukları desteği sağlıyoruz.</p>
-            </div>
-            <div class="col-lg-6">
-              <img class="img-fluid" src="assets/img/marketer.png" alt="" />
-            </div>
-          </div>
-        </div>
-        <!-- end of .container-->
-      </section>
-      <!-- <section> close ============================-->
-      <!-- ============================================-->
-      <!-- ============================================-->
-      <!-- <section> begin ============================-->
-      <section class="py-md-11 py-8">
-        <div class="bg-holder z-index--1 bottom-0 d-none d-lg-block background-position-top" style="background-image:url(assets/img/oval.png);opacity:.5; background-position: top !important ;"></div>
-        <!--/.bg-holder-->
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-lg-6 text-center">
-              <h1 class="fw-bold mb-4 fs-7">İş Akışı Çözümlerimizle Verimliliğinizi En Üst Düzeye Çıkarmaya Hazırlanın!</h1>
-              <p class="mb-5 text-info fw-medium">Yazılım çözümlerimiz, iş süreçlerinizi optimize ederek verimliliğinizi artırmanızı sağlar. İş akışınızı en üst düzeye çıkararak daha hızlı, daha etkili ve daha karlı bir şekilde çalışabilirsiniz. Siz de modern teknolojilerle buluşun, işinizi bir üst seviyeye taşıyın! Hemen bize ulaşın ve çözümünüzü şimdi bulun!</p>
-              <a href="mailto:info@kapukaya.dev">
-                <button class="btn btn-warning btn-md">Teklif Al!</button>
-              </a>
-            </div>
-          </div>
-        </div>
-        <!-- end of .container-->
-      </section>
-      <!-- <section> close ============================-->
-      <!-- ============================================-->
-      <!-- ============================================-->
-      <!-- <section> begin ============================-->
-      <section class="text-center py-0">
-        <div class="container">
-          <div class="container border-top py-3">
-            <div class="row justify-content-between">
-              <div class="col-12 col-md-auto mb-1 mb-md-0">
-                <p class="mb-0">&copy; 2023 Kapukaya Labs </p>
-              </div>
-              <div class="col-12 col-md-auto">
-                <p class="mb-0">kapukaya.app</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- end of .container-->
-      </section>
-      <!-- <section> close ============================-->
-      <!-- ============================================-->
-    </main>
-    <!-- ===============================================-->
-    <!--    End of Main Content-->
-    <!-- ===============================================-->
-    <div class="modal fade" id="popupVideo" tabindex="-1" aria-labelledby="popupVideo" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered modal-lg">
-        <div class="modal-content">
-          <iframe class="rounded" style="width:100%;height:500px;" src="https://www.youtube.com/embed/bvmXvi76qQ8?si=NON0jLO2aTEISI_v" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-      </div>
+    </form>
+
+    <div class="table-container">
+        <h2>Ürün Listesi</h2>
+        <table id="productTable">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Shop</th>
+                    <th>Photo (File Name)</th>
+                    <th>Item No</th>
+                    <th>CTNS</th>
+                    <th>QTY/CTN</th>
+                    <th>TT</th>
+                    <th>QTY</th>
+                    <th>U/Price</th>
+                    <th>Amount</th>
+                    <th>Amount2</th>
+                    <th>Amount3</th>
+                    <th>CBM</th>
+                    <th>Total CBM</th>
+                    <th>KG/CTN</th>
+                    <th>G.W.(KGS)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Ürünler buraya eklenecek -->
+            </tbody>
+        </table>
     </div>
-    <!-- ===============================================-->
-    <!--    JavaScripts-->
-    <!-- ===============================================-->
-    <script src="vendors/@popperjs/popper.min.js"></script>
-    <script src="vendors/bootstrap/bootstrap.min.js"></script>
-    <script src="vendors/is/is.min.js"></script>
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
-    <script src="vendors/fontawesome/all.min.js"></script>
-    <script src="assets/js/theme.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;family=Volkhov:wght@700&amp;display=swap" rel="stylesheet">
-  </body>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script>
+    let products = [];
+
+    async function addProduct() {
+        const photoFile = document.getElementById("photo").files[0];
+        const photoName = photoFile ? photoFile.name : "";  // Fotoğraf dosya ismini kaydet
+
+        const product = {
+            no: document.getElementById("no").value,
+            shop: document.getElementById("shop").value,
+            photoName: photoName,  // Photo alanına sadece dosya ismini yazıyoruz
+            itemNo: document.getElementById("itemNo").value,
+            ctns: document.getElementById("ctns").value,
+            qtyCtn: document.getElementById("qtyCtn").value,
+            tt: document.getElementById("tt").value,
+            qty: document.getElementById("qty").value,
+            uPrice: document.getElementById("uPrice").value,
+            amount: document.getElementById("amount").value,
+            amount2: document.getElementById("amount2").value,
+            amount3: document.getElementById("amount3").value,
+            cbm: document.getElementById("cbm").value,
+            totalCbm: document.getElementById("totalCbm").value,
+            kgCtn: document.getElementById("kgCtn").value,
+            gwKgs: document.getElementById("gwKgs").value
+        };
+
+        products.push(product);
+        displayProducts();
+        document.getElementById("productForm").reset();
+    }
+
+    function displayProducts() {
+        const tableBody = document.getElementById("productTable").getElementsByTagName("tbody")[0];
+        tableBody.innerHTML = "";
+
+        products.forEach(product => {
+            const row = tableBody.insertRow();
+            Object.values(product).forEach(value => {
+                const cell = row.insertCell();
+                cell.textContent = value;
+            });
+        });
+    }
+
+    function exportToExcel() {
+    const wb = XLSX.utils.book_new();
+    
+    // Excel'e aktarılacak veriler
+    const ws_data = [
+        ["No", "Shop", "Photo (File Name)", "Item No", "CTNS", "QTY/CTN", "TT", "QTY", "U/Price", "Amount", "Amount2", "Amount3", "CBM", "Total CBM", "KG/CTN", "G.W.(KGS)"],
+        ...products.map(product => Object.values(product))
+    ];
+
+    // Toplanacak sütunların indeksleri
+    const totalColumns = {
+        ctns: 4,
+        tt: 6,
+        amount: 9,
+        totalCbm: 13,
+        gwKgs: 15
+    };
+
+    // Her sütunun toplamını hesapla
+    const totals = Array(ws_data[0].length).fill(""); // Başlangıçta boş dizi
+
+    totals[totalColumns.ctns] = products.reduce((sum, product) => sum + Number(product.ctns || 0), 0);
+    totals[totalColumns.tt] = products.reduce((sum, product) => sum + Number(product.tt || 0), 0);
+    totals[totalColumns.amount] = products.reduce((sum, product) => sum + Number(product.amount || 0), 0);
+    totals[totalColumns.totalCbm] = products.reduce((sum, product) => sum + Number(product.totalCbm || 0), 0);
+    totals[totalColumns.gwKgs] = products.reduce((sum, product) => sum + Number(product.gwKgs || 0), 0);
+
+    // "Toplam" metnini en başa ekleyerek toplam satırını oluştur
+    totals[0] = "Toplam";
+
+    // Toplam satırı veri tablosuna ekle
+    ws_data.push(totals);
+
+    const ws = XLSX.utils.aoa_to_sheet(ws_data);
+    XLSX.utils.book_append_sheet(wb, ws, "Ürünler");
+
+    // Dosya adı için tarih ve saat oluşturma
+    const now = new Date();
+    const day = String(now.getDate()).padStart(2, '0');
+    const month = String(now.getMonth() + 1).padStart(2, '0');
+    const year = now.getFullYear();
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    const fileName = `product-${day}${month}${year}-${hours}${minutes}.xlsx`;
+
+    XLSX.writeFile(wb, fileName);
+}
+function exportToExcel() {
+    const wb = XLSX.utils.book_new();
+    
+    // Excel'e aktarılacak veriler
+    const ws_data = [
+        ["NO", "SHOP", "PHOTO", "ITEM NO", "CTNS", "QTY/CTN", "TT QTY", "U/PRICE", "AMOUNT", "AMOUNT2", "AMOUNT3", "CBM", "TOTAL CBM", "KG/CTN", "G.W.(KGS)"],
+        ...products.map(product => [
+            product.no,
+            product.shop,
+            product.photoName || "",  // Fotoğraf dosya ismi (veya Base64 yerine gösterim için kısa bir bilgi)
+            product.itemNo,
+            Number(product.ctns) || 0,
+            Number(product.qtyCtn) || 0,
+            Number(product.tt) || 0,
+            Number(product.uPrice) || 0,
+            Number(product.amount) || 0,
+            Number(product.amount2) || 0,
+            Number(product.amount3) || 0,
+            Number(product.cbm) || 0,
+            Number(product.totalCbm) || 0,
+            Number(product.kgCtn) || 0,
+            Number(product.gwKgs) || 0,
+        ])
+    ];
+
+    // Toplanacak sütunların indeksleri
+    const totalColumns = {
+        ctns: 4,
+        qtyCtn: 5,
+        tt: 6,
+        amount: 8,
+        totalCbm: 12,
+        gwKgs: 14
+    };
+
+    // Her sütunun toplamını hesapla (başlangıçta tüm hücreler boş)
+    const totals = Array(ws_data[0].length).fill(""); 
+
+    totals[totalColumns.ctns] = products.reduce((sum, product) => sum + Number(product.ctns || 0), 0);
+    totals[totalColumns.qtyCtn] = products.reduce((sum, product) => sum + Number(product.qtyCtn || 0), 0);
+    totals[totalColumns.tt] = products.reduce((sum, product) => sum + Number(product.tt || 0), 0);
+    totals[totalColumns.amount] = products.reduce((sum, product) => sum + Number(product.amount || 0), 0);
+    totals[totalColumns.totalCbm] = products.reduce((sum, product) => sum + Number(product.totalCbm || 0), 0);
+    totals[totalColumns.gwKgs] = products.reduce((sum, product) => sum + Number(product.gwKgs || 0), 0);
+
+    // Toplam satırını veri tablosuna ekle
+    ws_data.push(totals);
+
+    const ws = XLSX.utils.aoa_to_sheet(ws_data);
+
+    // Hücre genişliklerini ayarlama
+    ws['!cols'] = [
+        { wpx: 40 }, // NO
+        { wpx: 80 }, // SHOP
+        { wpx: 100 }, // PHOTO
+        { wpx: 100 }, // ITEM NO
+        { wpx: 60 }, // CTNS
+        { wpx: 60 }, // QTY/CTN
+        { wpx: 80 }, // TT QTY
+        { wpx: 80 }, // U/PRICE
+        { wpx: 80 }, // AMOUNT
+        { wpx: 80 }, // AMOUNT2
+        { wpx: 80 }, // AMOUNT3
+        { wpx: 60 }, // CBM
+        { wpx: 80 }, // TOTAL CBM
+        { wpx: 60 }, // KG/CTN
+        { wpx: 80 }  // G.W.(KGS)
+    ];
+
+    XLSX.utils.book_append_sheet(wb, ws, "Ürünler");
+
+    // Dosya adı için tarih ve saat oluşturma
+    const now = new Date();
+    const day = String(now.getDate()).padStart(2, '0');
+    const month = String(now.getMonth() + 1).padStart(2, '0');
+    const year = now.getFullYear();
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    const fileName = `product-${day}${month}${year}-${hours}${minutes}.xlsx`;
+
+    XLSX.writeFile(wb, fileName);
+}
+
+</script>
+
+</body>
 </html>
